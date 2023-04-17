@@ -1,0 +1,20 @@
+
+Features:
+Create underwater scene													.
+Create beach scene														.
+Add scene transitions through UI buttons								.
+Structure and create files for Button actions (Json?)					.
+Spawn buttons dynamically based on file count							.
+Spawn objects in scene based on text files passed						.
+Add information about stuff from text files								.
+Create quiz minigame													.
+Create JSON file reader to load quizes									.
+Different quiz types (text, text + image, maybe spelling)				.
+Rubbish collection minigame on beach (maybe basketball style)			.
+Audio																	.
+Menuing																	.
+Write the diss															.
+
+
+Bug Fixes:
+[Optional] Add layers for UI interaction to use different controls		.
