@@ -17,9 +17,10 @@ public class CircleMovement : MonoBehaviour
 
 	void Update()
 	{
-		currentAngle += angularSpeed * Time.deltaTime;
 		Vector3 offset = new Vector3(Mathf.Sin(currentAngle), Mathf.Sin(currentAngle), Mathf.Cos(currentAngle)) * circleRad;
+		currentAngle += angularSpeed * Time.deltaTime;
+		Vector3 lookat = new Vector3(Mathf.Sin(currentAngle), Mathf.Sin(currentAngle), Mathf.Cos(currentAngle)) * circleRad;
 		transform.position = fixedPoint + offset;
-
+		transform.LookAt(fixedPoint + lookat);
 	}
 }

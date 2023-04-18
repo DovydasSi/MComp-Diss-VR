@@ -6,18 +6,19 @@ using System.IO;
 [System.Serializable]
 public struct ButtonInfo
 {
-	SceneChanger.SceneTypes sceneType;
-	string spriteFilename;
-	string setupFilename;
+	public SceneChanger.SceneTypes sceneType;
+	public string spriteFilename;
+	public string buttonName;
+	public string setupFilename;
 }
 
 public class ButtonSpawner : MonoBehaviour
 {
 	[SerializeField]
-	GameObject parentObject;
+	Transform parentTransform;
 
 	[SerializeField]
-	GameObject prefabObject;
+	ButtonContent prefabObject;
 
     // Start is called before the first frame update
     void Start()
@@ -29,9 +30,14 @@ public class ButtonSpawner : MonoBehaviour
 		//		Load them with data from the file (Scene type, button sprite filename, scene setup filename)
 		//		
 		
-		LoadButtonsFromFile();
-		
-    }
+		//LoadButtonsFromFile();
+
+		for (int i = 0; i < 11; i++)
+		{
+			ButtonContent obj = Instantiate(prefabObject, parentTransform);
+		}
+
+	}
 
 	private void LoadButtonsFromFile()
 	{
@@ -46,11 +52,12 @@ public class ButtonSpawner : MonoBehaviour
 		{
 			for (int i = 0; i < num_of_tests && (line = sr.ReadLine()) != null; i++)
 			{
-				 ButtonInfo info = JsonUtility.FromJson<ButtonInfo>(line);
+				ButtonInfo info = JsonUtility.FromJson<ButtonInfo>(line);
 
-				GameObject obj = Instantiate(prefabObject, parentObject.transform);
+				ButtonContent obj = Instantiate(prefabObject, parentTransform);
 
 				//Load data to button
+				obj.LoadData(info);
 			}
 		}
 		sr.Close();

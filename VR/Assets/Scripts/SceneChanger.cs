@@ -23,15 +23,15 @@ public class SceneChanger : MonoBehaviour
 		public string setup_filename;
 	}
 
-	static public SceneChangeInfo s_currInfo;
+	static public string s_sceneSetupFilename;
 
-	public void ChangeScene(SceneChangeInfo info)
+	public static void ChangeScene(SceneTypes type, string setupFilename)
 	{
-		if (info.scene_type < SceneTypes.ST_COUNT)
+		if (type < SceneTypes.ST_COUNT)
 		{
-			s_currInfo = info;
+			s_sceneSetupFilename = setupFilename;
 
-			switch(info.scene_type)
+			switch(type)
 			{
 				case SceneTypes.ST_OCEAN:
 				case SceneTypes.ST_BEACH:
