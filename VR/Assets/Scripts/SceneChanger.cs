@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
+	[System.Serializable]
 	public enum SceneTypes
 	{
 		ST_OCEAN,
@@ -13,8 +14,9 @@ public class SceneChanger : MonoBehaviour
 		ST_BEACH_GAME,
 		ST_TEST,
 		ST_COUNT
-	}
+	};
 
+	// Remove this probably
 	public struct SceneChangeInfo
 	{
 		public SceneTypes scene_type;
