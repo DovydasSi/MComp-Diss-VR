@@ -18,6 +18,7 @@ public class ButtonContent : MonoBehaviour
 	public void OnClick()
 	{
 		SceneChanger.ChangeScene(sceneType, setupPath);
+		//SceneChanger.ChangeScene();
 	}
 
 	public void LoadData(ButtonInfo data)
@@ -28,7 +29,7 @@ public class ButtonContent : MonoBehaviour
 		if (File.Exists("Assets/Resources/" + data.spriteFilename) && data.spriteFilename.Length > 4)
 		{
 			//Remove extension...
-			image.sprite = Resources.Load<Sprite>(data.spriteFilename.Substring(0, data.spriteFilename.Length - 4)); // ugly extension removal
+			image.sprite = Resources.Load<Sprite>(data.spriteFilename.Substring(0, data.spriteFilename.Length - 4)); // ugly extension removal all expensions have to be '.' + 3 other characters
 		}
 
 		text.text = data.buttonName;

@@ -33,12 +33,17 @@ public class SceneChanger : MonoBehaviour
 
 			switch(type)
 			{
-				case SceneTypes.ST_OCEAN:
+				case SceneTypes.ST_OCEAN: 
 				case SceneTypes.ST_BEACH:
 				case SceneTypes.ST_BEACH_GAME:
-				case SceneTypes.ST_TEST:
+				case SceneTypes.ST_TEST: SceneManager.LoadScene(1); break;
 				default: return;
 			}
 		}
+	}
+
+	public static void ChangeScene()
+	{
+		SceneManager.LoadScene(1);
 	}
 }

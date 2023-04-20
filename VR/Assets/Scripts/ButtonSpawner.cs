@@ -23,20 +23,10 @@ public class ButtonSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Parse number of files
-		// For each file:
-		//		Parse it
-		//		Instantiate prefabs under the parent object
-		//		Load them with data from the file (Scene type, button sprite filename, scene setup filename)
-		//		
-		
+		LoadDefaultButtons();
+
+
 		//LoadButtonsFromFile();
-
-		for (int i = 0; i < 11; i++)
-		{
-			ButtonContent obj = Instantiate(prefabObject, parentTransform);
-		}
-
 	}
 
 	private void LoadButtonsFromFile()
@@ -61,5 +51,52 @@ public class ButtonSpawner : MonoBehaviour
 			}
 		}
 		sr.Close();
+	}
+
+	private void LoadDefaultButtons()
+	{
+		ButtonInfo b = new ButtonInfo();
+		b.sceneType = SceneChanger.SceneTypes.ST_OCEAN;
+		b.spriteFilename = "Button Sprites/NCL.png";
+		b.setupFilename = "";
+		b.buttonName = "Named button";
+
+		SaveButtonInfo(b);
+
+		for (int i = 0; i < 2; i++)
+		{
+			ButtonContent obj = Instantiate(prefabObject, parentTransform);
+			obj.LoadData(b);
+		}
+	}
+
+	// Utility method to generate the JSON file
+	public static bool SaveButtonInfo(ButtonInfo info)
+	{
+		string path = "Assets/Scene_Options.json";
+
+		StreamWriter sw = new StreamWriter(path, false);
+		sw.WriteLine(1);
+
+		sw.WriteLine(JsonUtility.ToJson(info));
+		sw.Close();
+
+		return true;
+	}
+
+	public static bool SaveButtonInfo(ButtonInfo[] info)
+	{
+		string path = "Assets/Scene_Options.json";
+
+		StreamWriter sw = new StreamWriter(path, false);
+		sw.WriteLine(1);
+		foreach (ButtonInfo p in info)
+		{
+			sw.WriteLine(JsonUtility.ToJson(p));
+		}
+
+		sw.Close();
+
+		return true;
 	}
 }
