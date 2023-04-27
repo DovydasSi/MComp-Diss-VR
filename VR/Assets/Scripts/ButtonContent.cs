@@ -13,7 +13,8 @@ public class ButtonContent : MonoBehaviour
 	Text text;
 
 	string setupPath;
-	SceneChanger.SceneTypes sceneType;
+
+	SceneChanger.SceneTypes sceneType = SceneChanger.SceneTypes.ST_MAIN;
 
 	public void OnClick()
 	{
@@ -29,7 +30,7 @@ public class ButtonContent : MonoBehaviour
 		if (File.Exists("Assets/Resources/" + data.spriteFilename) && data.spriteFilename.Length > 4)
 		{
 			//Remove extension...
-			image.sprite = Resources.Load<Sprite>(data.spriteFilename.Substring(0, data.spriteFilename.Length - 4)); // ugly extension removal all expensions have to be '.' + 3 other characters
+			image.sprite = Resources.Load<Sprite>(data.spriteFilename.Substring(0, data.spriteFilename.Length - 4)); // ugly extension removal all extensions have to be '.' + 3 other characters
 		}
 
 		text.text = data.buttonName;

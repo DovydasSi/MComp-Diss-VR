@@ -13,6 +13,7 @@ public class SceneChanger : MonoBehaviour
 		ST_BEACH,
 		ST_BEACH_GAME,
 		ST_TEST,
+		ST_MAIN,
 		ST_COUNT
 	};
 
@@ -33,10 +34,11 @@ public class SceneChanger : MonoBehaviour
 
 			switch(type)
 			{
-				case SceneTypes.ST_OCEAN: 
-				case SceneTypes.ST_BEACH:
+				case SceneTypes.ST_OCEAN: SceneManager.LoadScene("UnderWater"); break;
+				case SceneTypes.ST_BEACH: SceneManager.LoadScene("Beach"); break;
 				case SceneTypes.ST_BEACH_GAME:
 				case SceneTypes.ST_TEST: SceneManager.LoadScene(1); break;
+				case SceneTypes.ST_MAIN: SceneManager.LoadScene(0); break;
 				default: return;
 			}
 		}

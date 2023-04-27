@@ -6,8 +6,9 @@ Create test scene														.
 Add scene transitions through UI buttons								Done
 Structure and create files for Button actions (Json?)					Done
 Spawn buttons dynamically based on file count							Done
-Spawn objects in scene based on text files passed						.
+Spawn objects in scene based on text files passed						Done(Ocean)
 Add information about stuff from text files								.
+	String Table														.
 Create quiz minigame													.
 Create JSON file reader to load quizes									.
 Different quiz types (text, text + image, maybe spelling)				.
@@ -19,6 +20,8 @@ Write the diss															.
 
 Bug Fixes:
 [Optional] Add layers for UI interaction to use different controls		.
+Add proper water since URP didn't work out								.
 
 Improvements:
-Better whale AI ( with animation switching )
+Better whale AI ( with animation switching )							.
+Add an xr interactible for fish boids to be following it				.

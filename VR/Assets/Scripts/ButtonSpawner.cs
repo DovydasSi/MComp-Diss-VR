@@ -6,10 +6,19 @@ using System.IO;
 [System.Serializable]
 public struct ButtonInfo
 {
+	//public ButtonType buttonType;
 	public SceneChanger.SceneTypes sceneType;
 	public string spriteFilename;
 	public string buttonName;
 	public string setupFilename;
+}
+
+public enum ButtonType
+{
+	BT_SCENE_SWITCH,
+	BT_DISPLAY_UI,
+
+	BT_COUNT
 }
 
 public class ButtonSpawner : MonoBehaviour
@@ -23,10 +32,10 @@ public class ButtonSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-		LoadDefaultButtons();
+		//LoadDefaultButtons();
 
 
-		//LoadButtonsFromFile();
+		LoadButtonsFromFile();
 	}
 
 	private void LoadButtonsFromFile()
@@ -46,6 +55,8 @@ public class ButtonSpawner : MonoBehaviour
 
 				ButtonContent obj = Instantiate(prefabObject, parentTransform);
 
+				obj.transform.SetSiblingIndex(i); // We want these buttons to take priority in the sequence 
+
 				//Load data to button
 				obj.LoadData(info);
 			}
@@ -56,10 +67,11 @@ public class ButtonSpawner : MonoBehaviour
 	private void LoadDefaultButtons()
 	{
 		ButtonInfo b = new ButtonInfo();
+		//b.buttonType = ButtonType.BT_SCENE_SWITCH;
 		b.sceneType = SceneChanger.SceneTypes.ST_OCEAN;
-		b.spriteFilename = "Button Sprites/NCL.png";
-		b.setupFilename = "";
-		b.buttonName = "Named button";
+		b.spriteFilename = "Button Sprites/Whale.jpg";
+		b.setupFilename = "Ocean Whale.txt";
+		b.buttonName = "Humpaback Whale";
 
 		SaveButtonInfo(b);
 
@@ -67,6 +79,7 @@ public class ButtonSpawner : MonoBehaviour
 		{
 			ButtonContent obj = Instantiate(prefabObject, parentTransform);
 			obj.LoadData(b);
+			obj.transform.SetSiblingIndex(i);
 		}
 	}
 

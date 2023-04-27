@@ -1,7 +1,3 @@
-6
-{"sceneType":0,"spriteFilename":"Button Sprites/NCL.png","buttonName":"Named button","setupFilename":""}
-{"sceneType":0,"spriteFilename":"Button Sprites/NCL.png","buttonName":"Named button","setupFilename":""}
-{"sceneType":0,"spriteFilename":"Button Sprites/NCL.png","buttonName":"Named button","setupFilename":""}
-{"sceneType":0,"spriteFilename":"Button Sprites/NCL.png","buttonName":"Named button","setupFilename":""}
-{"sceneType":0,"spriteFilename":"Button Sprites/NCL.png","buttonName":"Named button","setupFilename":""}
-{"sceneType":0,"spriteFilename":"Button Sprites/NCL.png","buttonName":"Named button","setupFilename":""}
+1
+{"sceneType":0,"spriteFilename":"Button Sprites/Whale.jpg","buttonName":"Humpaback Whale","setupFilename":"Ocean Whale.txt"}
+{"sceneType":4,"spriteFilename":"Button Sprites/Whale.jpg","buttonName":"Main Menu","setupFilename":""}
