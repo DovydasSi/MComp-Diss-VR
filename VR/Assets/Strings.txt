@@ -1,0 +1,36 @@
+// This comment is ignored
+VAR_NAME
+This is a simple string.
+// This comment is ignored
+------ This indicates the end of string
+LONG_VAR_NAME
+This is a simple string. This is a simple string. This is a simple string. This is a simple string. This is a simple string. This is a simple string. This is a simple string. This is a simple string. This is a simple string. This is a simple string. This is a simple string. This is a simple string. This is a simple string. 
+This is a simple string. This is a simple string. This is a simple string. This is a simple string. This is a simple string. This is a simple string. This is a simple string. This is a simple string. This is a simple string. 
+This is a simple string. This is a simple string. This is a simple string. 
+This is a simple string. This is a simple string. This is a simple string. This is a simple string. 
+This is a simple string. This is a simple string. This is a simple string. This is a simple string. 
+This is a simple string. This is a simple string. This is a simple string. This is a simple string. This is a simple string. 
+This is a simple string. This is a simple string. This is a simple string. This is a simple string. This is a simple string. 
+----- That was a long string. Don't leave an empty line below, please
+SHARK_INFO
+Sharks are cool. That's a fact.
+---
+DEFAULT_QUESTION
+What's a shark?
+---
+DEFAULT_QUESTION2
+What's a fish?
+---
+DEFAULT_ANSWER1
+A fish. A fish. A fish. A fish. A fish. A fish. A fish. A fish. A fish. A fish. A fish. A fish. A fish. 
+A fish. A fish. A fish. A fish. A fish. 
+---
+DEFAULT_ANSWER2
+A bird.
+---
+DEFAULT_ANSWER3
+A mammal that lives under the sea.
+---
+DEFAULT_ANSWER4
+A fruit.
+----

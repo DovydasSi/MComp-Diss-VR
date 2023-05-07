@@ -6,6 +6,7 @@
 
 using System.Collections;
 using UnityEngine;
+using Unity.XR.CoreUtils;
 
 [HelpURL("https://nvjob.github.io/unity/nvjob-boids")]
 [AddComponentMenu("#NVJOB/Boids/Shark")]
@@ -24,6 +25,7 @@ public class Shark : MonoBehaviour
     public float speed = 5;
     public float walkZone = 100;
     public Transform camRig;
+    public Transform rigPos;
     public bool debug;
 
     [Header("Hunting Settings")]
@@ -38,6 +40,11 @@ public class Shark : MonoBehaviour
     float startYpos, huntTime, huntSpeed, speedSh, acselSh;
     bool hunting;
     static WaitForSeconds delay0 = new WaitForSeconds(8.0f);
+
+	//--------------
+
+	[SerializeField]
+	XROriginRetriever retriever;
 
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -99,10 +106,10 @@ public class Shark : MonoBehaviour
             if (acselSh < 0.6f) acselSh += Time.deltaTime * 0.1f;
         }
 
-        if (acselSh >= 0)
+        if (sharkMaterial != null && acselSh >= 0)
         {
             speedSh += Time.deltaTime * acselSh;
-            sharkMaterial.SetFloat("_ScriptControl", speedSh);
+			sharkMaterial.SetFloat("_ScriptControl", speedSh);
         }
 
         //--------------
@@ -132,8 +139,10 @@ public class Shark : MonoBehaviour
     void CameraRig()
     {
         //--------------
-
-        camRig.position = thisTransform.position;
+		if(camRig != null && rigPos != null)
+		{
+			camRig.position = rigPos.position;
+		}
 
         //--------------
     }
@@ -170,4 +179,17 @@ public class Shark : MonoBehaviour
 
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+	public void AttachRig()
+	{
+		camRig = retriever.GetXRTransform();
+		Debug.Log("Attached Rig");
+	}
+
+	public void DetachRig()
+	{
+		Debug.Log("Dettached Rig");
+		camRig = null;
+	}
 }

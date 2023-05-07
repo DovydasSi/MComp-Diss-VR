@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.InputSystem;
 
 public class OceanSceneSetup : MonoBehaviour
 {
+	[SerializeField]
+	public InputActionReference triggerClick;
 
 	[SerializeField]
 	GameObject defaultPrefab;
@@ -42,8 +45,23 @@ public class OceanSceneSetup : MonoBehaviour
 			{
 				GameObject obj = Resources.Load<GameObject>("Prefabs/" + line);
 
+				UIRevealerSetup(ref obj);
+				
 				Instantiate(obj, transform);
+
 			}
 		}
 	}
+
+	private void UIRevealerSetup(ref GameObject obj)
+	{
+		ClickableUIRevealer cuir = obj.AddComponent<ClickableUIRevealer>();
+
+
+		cuir.info_text = "";
+		cuir.triggerClick = triggerClick;
+		//cuir.toggleObj
+	}
 }
+
+

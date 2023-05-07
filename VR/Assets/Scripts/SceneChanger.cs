@@ -26,7 +26,7 @@ public class SceneChanger : MonoBehaviour
 
 	static public string s_sceneSetupFilename;
 
-	public static void ChangeScene(SceneTypes type, string setupFilename)
+	public static void ChangeScene(SceneTypes type, string setupFilename = "")
 	{
 		if (type < SceneTypes.ST_COUNT)
 		{
@@ -47,5 +47,10 @@ public class SceneChanger : MonoBehaviour
 	public static void ChangeScene()
 	{
 		SceneManager.LoadScene(1);
+	}
+
+	public static void ToMainMenu(bool a)
+	{
+		SceneManager.LoadScene(0);
 	}
 }

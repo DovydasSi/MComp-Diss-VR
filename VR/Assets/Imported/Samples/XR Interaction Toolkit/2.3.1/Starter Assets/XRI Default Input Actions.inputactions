@@ -2104,6 +2104,76 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "NCL Extra",
+            "id": "0806850a-5376-446f-9060-d61fd64ca16a",
+            "actions": [
+                {
+                    "name": "MenuButton",
+                    "type": "Button",
+                    "id": "886fb966-938e-4418-99ef-e911b7df4633",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TriggerClick",
+                    "type": "Button",
+                    "id": "62729951-2303-44c1-8a88-337ce8acb418",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "eec3262c-645d-43c4-9f1c-90a06ba88d89",
+                    "path": "<XRController>{LeftHand}/menu",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "MenuButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7c5fe080-ca64-48fa-86a2-61b671278ddd",
+                    "path": "<XRController>{RightHand}/menu",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MenuButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5ebaca6b-c8f7-4a6e-a9a0-c3e287cfb94d",
+                    "path": "<XRController>{RightHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TriggerClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "840458bc-5af2-4a87-b52b-2e6ff8257320",
+                    "path": "<XRController>{LeftHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TriggerClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

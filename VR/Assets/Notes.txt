@@ -1,27 +1,30 @@
 
 Features:
 Create underwater scene													Done(Partially)
-Create beach scene														.
 Create test scene														.
 Add scene transitions through UI buttons								Done
 Structure and create files for Button actions (Json?)					Done
 Spawn buttons dynamically based on file count							Done
-Spawn objects in scene based on text files passed						Done(Ocean)
+Spawn objects in scene based on text files passed						Done
 Add information about stuff from text files								.
-	String Table														.
-Create quiz minigame													.
-Create JSON file reader to load quizes									.
-Different quiz types (text, text + image, maybe spelling)				.
-Rubbish collection minigame on beach (maybe basketball style)			.
-Audio																	.
-Menuing																	.
+	String Tables														Done
+	UI next to game objects												Done (Screen Space)
+	Make UI Bilboard													Unnecessary 
+	[Alternatively] Put info UI on player's wrist						Nope
+	Add ClickableUIrevealer component to spawned objects				Done (Test it please, I'm tired)
+	Change oceanSceneSetup file to json to include string ID			.
+Create quiz minigame													Done
+Create JSON file reader to load quizes									Done
+Different quiz types (text, text + image, maybe spelling)				Done(I think?)
+Audio																	Basic (One Song, static)
+	[Optional] Could be improved with loading song from file			.
+Menuing																	Done(More or less)
 Write the diss															.
 
 
 Bug Fixes:
-[Optional] Add layers for UI interaction to use different controls		.
-Add proper water since URP didn't work out								.
+[Optional] Add layers for UI interaction to use different controls		(SteamVR Home faces the same issue)
 
 Improvements:
-Better whale AI ( with animation switching )							.
-Add an xr interactible for fish boids to be following it				.
+Better whale AI ( with animation switching )							Done (No anim switching)
+Add an xr interactible for fish boids to be following it				Not doing that anymore (though could)

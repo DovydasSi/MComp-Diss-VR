@@ -30,12 +30,13 @@ public class ButtonSpawner : MonoBehaviour
 	ButtonContent prefabObject;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
 		//LoadDefaultButtons();
 
 
 		LoadButtonsFromFile();
+		LocalizationManager.ReadFile("Assets/Strings.txt");
 	}
 
 	private void LoadButtonsFromFile()
