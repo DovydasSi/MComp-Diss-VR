@@ -5,44 +5,24 @@ using UnityEngine.InputSystem;
 
 public class ClickableUIRevealer : MonoBehaviour
 {
-	[SerializeField]
-	public InputActionReference triggerClick;
-
-	[SerializeField]
-	public GameObject toggleObj;
-
 	public string info_text;
-	TextInfoContainer infoContainer;
-	Shark sharkComponent;
+	public TextInfoContainer infoContainer;
 
 	// Start is called before the first frame update
 	void Awake()
 	{
-		infoContainer = FindObjectOfType<TextInfoContainer>();
-		sharkComponent = gameObject.GetComponent<Shark>();
-
-		triggerClick.action.started += ClickStarted;
-		triggerClick.action.performed += ClickEnded;
+		//infoContainer = FindObjectOfType<TextInfoContainer>();
 	}
 
-
-	private void OnDestroy()
+	public void OnClick()
 	{
-		triggerClick.action.started -= ClickStarted;
-		triggerClick.action.performed -= ClickEnded;
-	}
-
-	private void ClickStarted(InputAction.CallbackContext context)
-	{
-		toggleObj.SetActive(true);
 		infoContainer.SetText(info_text);
-		sharkComponent.enabled = false;
+		infoContainer.gameObject.SetActive(true);
 	}
 
-	private void ClickEnded(InputAction.CallbackContext context)
+	public void OnRelease()
 	{
-		toggleObj.SetActive(false);
-
-		sharkComponent.enabled = true;
+		infoContainer.SetText(info_text);
+		infoContainer.gameObject.SetActive(false);
 	}
 }

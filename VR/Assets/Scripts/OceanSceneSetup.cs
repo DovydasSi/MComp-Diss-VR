@@ -12,6 +12,20 @@ public class OceanSceneSetup : MonoBehaviour
 	[SerializeField]
 	GameObject defaultPrefab;
 
+	[SerializeField]
+	TextInfoContainer textUI;
+
+	[System.Serializable]
+	struct OceanSceneParameters
+	{
+		string prefab_noExt;
+		string info_stringID;
+		bool clickable;
+		bool grabable;
+		bool addSharkAI;
+		Vector3 startingPosition;
+	}
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +35,8 @@ public class OceanSceneSetup : MonoBehaviour
 		}
 		else if (defaultPrefab != null)
 		{
-			Instantiate(defaultPrefab, transform);
+			GameObject obj = Instantiate(defaultPrefab, transform);
+			UIRevealerSetup(ref obj);
 		}
     }
 
@@ -44,23 +59,25 @@ public class OceanSceneSetup : MonoBehaviour
 			if (File.Exists("Assets/Resources/Prefabs/" + line + ".prefab"))
 			{
 				GameObject obj = Resources.Load<GameObject>("Prefabs/" + line);
-
-				UIRevealerSetup(ref obj);
 				
-				Instantiate(obj, transform);
+				obj = Instantiate(obj, transform);
 
+
+				if (true) // clickable
+				{
+					UIRevealerSetup(ref obj);
+				}
 			}
 		}
 	}
 
 	private void UIRevealerSetup(ref GameObject obj)
 	{
-		ClickableUIRevealer cuir = obj.AddComponent<ClickableUIRevealer>();
+		ClickableUIRevealer cuir = obj.GetComponent<ClickableUIRevealer>();
+		cuir.infoContainer = textUI;
+		cuir.info_text = "sdasdsad";
 
-
-		cuir.info_text = "";
-		cuir.triggerClick = triggerClick;
-		//cuir.toggleObj
+		// if has a XRSimpleInteractable, setup 
 	}
 }
 

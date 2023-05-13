@@ -36,7 +36,7 @@ public class TestButtonController : MonoBehaviour
     {
 		if(is_correct)
 		{
-			//button.
+			
 		}
 
 		questionnaireManager.QuestionAnswered(is_correct);
