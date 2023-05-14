@@ -1,3 +1,5 @@
-1
-{"sceneType":0,"spriteFilename":"Button Sprites/Whale.jpg","buttonName":"Humpaback Whale","setupFilename":"Ocean Whale.txt"}
-{"sceneType":4,"spriteFilename":"Button Sprites/Whale.jpg","buttonName":"Main Menu","setupFilename":""}
+4
+{"sceneType":0,"spriteFilename":"Button Sprites/Whale.jpg","buttonName":"Humpaback Whale","setupFilename":"Whale.json"}
+{"sceneType":0,"spriteFilename":"Button Sprites/Whale.jpg","buttonName":"Shark Den","setupFilename":"Shark Den.json"}
+{"sceneType":0,"spriteFilename":"Button Sprites/Whale.jpg","buttonName":"Humpaback Whale","setupFilename":"Whale.json"}
+{"sceneType":0,"spriteFilename":"Button Sprites/Whale.jpg","buttonName":"Humpaback Whale","setupFilename":"Whale.json"}

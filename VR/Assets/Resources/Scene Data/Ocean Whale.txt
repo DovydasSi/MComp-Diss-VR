@@ -1,6 +1,0 @@
-// Prefab filenames without extension go here
-// all of these prefabs will be spawned
-// Prefabs taken from 'Assets/Resources/Prefabs/' folder
-Whale
-Shark
-FishSpawner

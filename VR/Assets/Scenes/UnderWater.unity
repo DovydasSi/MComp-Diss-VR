@@ -6934,7 +6934,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerClick: {fileID: -2316155615816763074, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   defaultPrefab: {fileID: 1759427340461634056, guid: b08a5b492e8fcab44b60d4af4f5e2596, type: 3}
-  textUI: {fileID: 1736046851}
+  infoUIContainer: {fileID: 1736046851}
 --- !u!1001 &1574386549
 PrefabInstance:
   m_ObjectHideFlags: 0

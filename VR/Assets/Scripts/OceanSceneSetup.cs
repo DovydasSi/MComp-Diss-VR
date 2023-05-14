@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 using System.IO;
 using UnityEngine.InputSystem;
 
@@ -13,22 +14,25 @@ public class OceanSceneSetup : MonoBehaviour
 	GameObject defaultPrefab;
 
 	[SerializeField]
-	TextInfoContainer textUI;
+	TextInfoContainer infoUIContainer;
 
 	[System.Serializable]
-	struct OceanSceneParameters
+	public struct OceanSceneParameters
 	{
-		string prefab_noExt;
-		string info_stringID;
-		bool clickable;
-		bool grabable;
-		bool addSharkAI;
-		Vector3 startingPosition;
+		public string prefab_noExt;
+		public string info_stringID;
+		public bool clickable;
+		//public bool grabable;
+		//public bool addSharkAI;
+		//public Vector3 startingPosition;
 	}
 
-    // Start is called before the first frame update
-    void Start()
+	// Start is called before the first frame update
+	void Start()
     {
+		//if (true) { WriteParamsToFile(); } else
+
+
         if(SceneChanger.s_sceneSetupFilename != null && SceneChanger.s_sceneSetupFilename.Length > 0)
 		{
 			ParseSetupFile(SceneChanger.s_sceneSetupFilename);
@@ -36,14 +40,8 @@ public class OceanSceneSetup : MonoBehaviour
 		else if (defaultPrefab != null)
 		{
 			GameObject obj = Instantiate(defaultPrefab, transform);
-			UIRevealerSetup(ref obj);
+			UIRevealerSetup(ref obj, "");
 		}
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
 	private void ParseSetupFile(string filename)
@@ -56,28 +54,71 @@ public class OceanSceneSetup : MonoBehaviour
 		{
 			if (line.StartsWith("//")) continue; // Ignore comments
 
-			if (File.Exists("Assets/Resources/Prefabs/" + line + ".prefab"))
+			OceanSceneParameters prefab_info = JsonUtility.FromJson<OceanSceneParameters>(line);
+
+			if (File.Exists("Assets/Resources/Prefabs/" + prefab_info.prefab_noExt + ".prefab"))
 			{
-				GameObject obj = Resources.Load<GameObject>("Prefabs/" + line);
+				GameObject obj = Resources.Load<GameObject>("Prefabs/" + prefab_info.prefab_noExt);
 				
 				obj = Instantiate(obj, transform);
 
-
-				if (true) // clickable
+				if (prefab_info.clickable && LocalizationManager.TryLookUpString("", out string info))
 				{
-					UIRevealerSetup(ref obj);
+					UIRevealerSetup(ref obj, info);
 				}
 			}
 		}
 	}
 
-	private void UIRevealerSetup(ref GameObject obj)
+	private void UIRevealerSetup(ref GameObject obj, string info)
 	{
-		ClickableUIRevealer cuir = obj.GetComponent<ClickableUIRevealer>();
-		cuir.infoContainer = textUI;
-		cuir.info_text = "sdasdsad";
+		if (obj.TryGetComponent<XRSimpleInteractable>(out XRSimpleInteractable xrInteractable))
+		{
+			ClickableUIRevealer cuir;
+			if (!obj.TryGetComponent<ClickableUIRevealer>(out cuir))
+			{
+				cuir = obj.AddComponent<ClickableUIRevealer>();
 
-		// if has a XRSimpleInteractable, setup 
+				xrInteractable.activated.AddListener(delegate { cuir.OnClick(); });
+				xrInteractable.deactivated.AddListener(delegate { cuir.OnRelease(); });
+			}
+
+			cuir.infoContainer = infoUIContainer;
+			cuir.info_text = info;
+		}	
+	}
+
+	private void WriteParamsToFile()
+	{
+		StreamWriter sw = new StreamWriter("Assets/Resources/Scene Data/Shark Den.json");
+
+		OceanSceneParameters osp;
+
+		//osp.clickable = true;
+		//osp.prefab_noExt = "Whale";
+		//osp.info_stringID = "WHALE_INFO";
+
+		//sw.WriteLine(JsonUtility.ToJson(osp));
+
+		osp.clickable = true;
+		osp.prefab_noExt = "Shark";
+		osp.info_stringID = "SHARK_INFO";
+
+		sw.WriteLine(JsonUtility.ToJson(osp));
+		sw.WriteLine(JsonUtility.ToJson(osp));
+		sw.WriteLine(JsonUtility.ToJson(osp));
+		sw.WriteLine(JsonUtility.ToJson(osp));
+		sw.WriteLine(JsonUtility.ToJson(osp));
+		sw.WriteLine(JsonUtility.ToJson(osp));
+
+		osp.clickable = false;
+		osp.prefab_noExt = "FishSpawner";
+		osp.info_stringID = "";
+
+		sw.WriteLine(JsonUtility.ToJson(osp));
+		sw.WriteLine(JsonUtility.ToJson(osp));
+
+		sw.Close();
 	}
 }
 
