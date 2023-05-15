@@ -1,5 +1,5 @@
 4
-{"sceneType":0,"spriteFilename":"Button Sprites/Whale.jpg","buttonName":"Humpaback Whale","setupFilename":"Whale.json"}
-{"sceneType":0,"spriteFilename":"Button Sprites/Whale.jpg","buttonName":"Shark Den","setupFilename":"Shark Den.json"}
-{"sceneType":0,"spriteFilename":"Button Sprites/Whale.jpg","buttonName":"Humpaback Whale","setupFilename":"Whale.json"}
-{"sceneType":0,"spriteFilename":"Button Sprites/Whale.jpg","buttonName":"Humpaback Whale","setupFilename":"Whale.json"}
+{"sceneType":1,"spriteFilename":"Button Sprites/Whale.jpg","buttonName":"Humpback Whale","setupFilename":"Whale.json"}
+{"sceneType":1,"spriteFilename":"Button Sprites/Shark.jpg","buttonName":"Shark Den","setupFilename":"Shark Den.json"}
+{"sceneType":1,"spriteFilename":"Button Sprites/Whale.jpg","buttonName":"Humpback Whale","setupFilename":"Whale.json"}
+{"sceneType":1,"spriteFilename":"Button Sprites/Whale.jpg","buttonName":"Humpback Whale","setupFilename":"Whale.json"}

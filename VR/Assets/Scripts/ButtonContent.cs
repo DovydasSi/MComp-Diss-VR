@@ -19,7 +19,6 @@ public class ButtonContent : MonoBehaviour
 	public void OnClick()
 	{
 		SceneChanger.ChangeScene(sceneType, setupPath);
-		//SceneChanger.ChangeScene();
 	}
 
 	public void LoadData(ButtonInfo data)

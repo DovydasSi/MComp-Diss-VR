@@ -9,11 +9,9 @@ public class SceneChanger : MonoBehaviour
 	[System.Serializable]
 	public enum SceneTypes
 	{
-		ST_OCEAN,
-		ST_BEACH,
-		ST_BEACH_GAME,
-		ST_TEST,
 		ST_MAIN,
+		ST_OCEAN,
+		ST_TEST,
 		ST_COUNT
 	};
 
@@ -26,21 +24,13 @@ public class SceneChanger : MonoBehaviour
 
 	static public string s_sceneSetupFilename;
 
-	public static void ChangeScene(SceneTypes type, string setupFilename = "")
+	public static void ChangeScene(SceneTypes type, string setupFilename)
 	{
-		if (type < SceneTypes.ST_COUNT)
+		if ((int)type >= 0 && type < SceneTypes.ST_COUNT)
 		{
 			s_sceneSetupFilename = setupFilename;
 
-			switch(type)
-			{
-				case SceneTypes.ST_OCEAN: SceneManager.LoadScene("UnderWater"); break;
-				case SceneTypes.ST_BEACH: SceneManager.LoadScene("Beach"); break;
-				case SceneTypes.ST_BEACH_GAME:
-				case SceneTypes.ST_TEST: SceneManager.LoadScene(1); break;
-				case SceneTypes.ST_MAIN: SceneManager.LoadScene(0); break;
-				default: return;
-			}
+			SceneManager.LoadScene((int)type);
 		}
 	}
 

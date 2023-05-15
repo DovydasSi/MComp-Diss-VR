@@ -20,7 +20,11 @@ public class ClickableUIRevealer : MonoBehaviour
 	public void OnClick()
 	{
 		infoContainer.SetText(info_text);
-		infoContainer.gameObject.SetActive(true);
+
+		if (info_text.Length > 0)
+		{
+			infoContainer.gameObject.SetActive(true);
+		}
 
 		if(rigidbody != null)
 		{
