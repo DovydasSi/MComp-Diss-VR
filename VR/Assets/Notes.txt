@@ -6,13 +6,13 @@ Add scene transitions through UI buttons								Done
 Structure and create files for Button actions (Json?)					Done
 Spawn buttons dynamically based on file count							Done
 Spawn objects in scene based on text files passed						Done
-Add information about stuff from text files								.
+Add information about stuff from text files								Done
 	String Tables														Done
 	UI next to game objects												Done (Screen Space)
 	Make UI Bilboard													Unnecessary 
 	[Alternatively] Put info UI on player's wrist						Nope
 	Add ClickableUIrevealer component to spawned objects				Done (Test it please, I'm tired)
-	Change oceanSceneSetup file to json to include string ID			.
+	Change oceanSceneSetup file to json to include string ID			Done
 Create quiz minigame													Done
 Create JSON file reader to load quizes									Done
 Different quiz types (text, text + image, maybe spelling)				Done(I think?)

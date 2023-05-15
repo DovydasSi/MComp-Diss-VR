@@ -59,10 +59,16 @@ public class OceanSceneSetup : MonoBehaviour
 			if (File.Exists("Assets/Resources/Prefabs/" + prefab_info.prefab_noExt + ".prefab"))
 			{
 				GameObject obj = Resources.Load<GameObject>("Prefabs/" + prefab_info.prefab_noExt);
-				
-				obj = Instantiate(obj, transform);
 
-				if (prefab_info.clickable && LocalizationManager.TryLookUpString("", out string info))
+				Vector3 pos = new Vector3(
+				Random.Range(-10, 10),
+				Random.Range(-5, 5),
+				Random.Range(-10, 10)
+				);
+
+				obj = Instantiate(obj, pos, Quaternion.identity, transform);
+
+				if (prefab_info.clickable && LocalizationManager.TryLookUpString(prefab_info.info_stringID, out string info))
 				{
 					UIRevealerSetup(ref obj, info);
 				}
