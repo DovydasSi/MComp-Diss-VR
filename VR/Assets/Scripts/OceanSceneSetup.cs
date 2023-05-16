@@ -93,7 +93,7 @@ public class OceanSceneSetup : MonoBehaviour
 
 	private void WriteParamsToFile()
 	{
-		StreamWriter sw = new StreamWriter("Assets/Resources/Scene Data/Whale.json");
+		StreamWriter sw = new StreamWriter("Assets/Resources/Scene Data/Whale.txt");
 
 		OceanSceneParameters osp;
 
