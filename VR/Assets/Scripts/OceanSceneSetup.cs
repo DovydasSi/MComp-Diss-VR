@@ -22,6 +22,7 @@ public class OceanSceneSetup : MonoBehaviour
 		public string prefab_noExt;
 		public string info_stringID;
 		public bool clickable;
+		public int radius;
 		//public bool grabable;
 		//public bool addSharkAI;
 		//public Vector3 startingPosition;
@@ -60,13 +61,9 @@ public class OceanSceneSetup : MonoBehaviour
 			{
 				GameObject obj = Resources.Load<GameObject>("Prefabs/" + prefab_info.prefab_noExt);
 
-				Vector3 pos = new Vector3(
-				Random.Range(-10, 10),
-				Random.Range(-5, 5),
-				Random.Range(-10, 10)
-				);
+				Vector3 dir = Random.insideUnitCircle;
 
-				obj = Instantiate(obj, pos, Quaternion.identity, transform);
+				obj = Instantiate(obj, dir * prefab_info.radius, Quaternion.identity, transform);
 
 				if (prefab_info.clickable && LocalizationManager.TryLookUpString(prefab_info.info_stringID, out string info))
 				{
@@ -96,26 +93,28 @@ public class OceanSceneSetup : MonoBehaviour
 
 	private void WriteParamsToFile()
 	{
-		StreamWriter sw = new StreamWriter("Assets/Resources/Scene Data/Shark Den.json");
+		StreamWriter sw = new StreamWriter("Assets/Resources/Scene Data/Whale.json");
 
 		OceanSceneParameters osp;
 
-		//osp.clickable = true;
-		//osp.prefab_noExt = "Whale";
-		//osp.info_stringID = "WHALE_INFO";
+		osp.clickable = true;
+		osp.prefab_noExt = "Whale";
+		osp.info_stringID = "WHALE_INFO";
+		osp.radius = 20;
 
-		//sw.WriteLine(JsonUtility.ToJson(osp));
+		sw.WriteLine(JsonUtility.ToJson(osp));
 
 		osp.clickable = true;
 		osp.prefab_noExt = "Shark";
 		osp.info_stringID = "SHARK_INFO";
+		osp.radius = 10;
 
 		sw.WriteLine(JsonUtility.ToJson(osp));
 		sw.WriteLine(JsonUtility.ToJson(osp));
 		sw.WriteLine(JsonUtility.ToJson(osp));
-		sw.WriteLine(JsonUtility.ToJson(osp));
-		sw.WriteLine(JsonUtility.ToJson(osp));
-		sw.WriteLine(JsonUtility.ToJson(osp));
+		//sw.WriteLine(JsonUtility.ToJson(osp));
+		//sw.WriteLine(JsonUtility.ToJson(osp));
+		//sw.WriteLine(JsonUtility.ToJson(osp));
 
 		osp.clickable = false;
 		osp.prefab_noExt = "FishSpawner";

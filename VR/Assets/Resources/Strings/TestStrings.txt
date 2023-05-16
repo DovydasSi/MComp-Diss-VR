@@ -1,0 +1,45 @@
+QUESTION
+What region is the Blacktip Reef Shark commonly found in?
+---
+QUESTION2
+What is a typical length for an adult humpback whale?
+---
+QUESTION3
+What species of whale does the Humpback Whale belog to?
+---
+ANSWER1
+14-17 meters. 
+---
+ANSWER2
+10-12 meters.
+---
+ANSWER3
+13 meters.
+---
+ANSWER4
+7-9 meters.
+----
+ANSWER5
+Indo-Pacific whale.
+---
+ANSWER6
+Blacktip Reef whale.
+---
+ANSWER7
+Megaptera novaeangliae.
+---
+ANSWER8
+Baleen whale.
+----
+ANSWER9
+Rorqual region.
+----
+ANSWER10
+Indo-Pacific region.
+---
+ANSWER11
+Blacktip region.
+---
+ANSWER12
+Megaptera Novaeangliae region.
+---

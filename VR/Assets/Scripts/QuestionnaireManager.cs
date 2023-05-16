@@ -31,9 +31,20 @@ public class QuestionnaireManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-		string filename = "TestQuestions.txt";
-		WriteJSONTestFile(filename);
-		ReadJSONTestFile(filename);
+
+		//if (true) { WriteJSONTestFile("TestQuestions.txt"); } else // just write
+
+
+		if (SceneChanger.s_sceneSetupFilename != null && SceneChanger.s_sceneSetupFilename.Length > 0)
+		{
+			ReadJSONTestFile(SceneChanger.s_sceneSetupFilename);
+		}
+		else 
+		{
+			string filename = "TestQuestions.txt";
+			WriteJSONTestFile(filename);
+			ReadJSONTestFile(filename);
+		}
 
 		BeginTest();
     }
@@ -66,7 +77,6 @@ public class QuestionnaireManager : MonoBehaviour
 
 	void WriteJSONTestFile(string filename)
 	{
-		//if (!File.Exists("Assets/Resources/Test Files" + filename)) return;
 
 		StreamWriter sr = new StreamWriter("Assets/Resources/Test Files/" + filename);
 

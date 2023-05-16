@@ -1,8 +1,8 @@
-{"prefab_noExt":"Shark","info_stringID":"SHARK_INFO","clickable":true}
-{"prefab_noExt":"Shark","info_stringID":"SHARK_INFO","clickable":true}
-{"prefab_noExt":"Shark","info_stringID":"SHARK_INFO","clickable":true}
-{"prefab_noExt":"Shark","info_stringID":"SHARK_INFO","clickable":true}
-{"prefab_noExt":"Shark","info_stringID":"SHARK_INFO","clickable":true}
-{"prefab_noExt":"Shark","info_stringID":"SHARK_INFO","clickable":true}
-{"prefab_noExt":"FishSpawner","info_stringID":"","clickable":false}
-{"prefab_noExt":"FishSpawner","info_stringID":"","clickable":false}
+{"prefab_noExt":"Shark","info_stringID":"SHARK_INFO","clickable":true,"radius":10}
+{"prefab_noExt":"Shark","info_stringID":"SHARK_INFO","clickable":true,"radius":10}
+{"prefab_noExt":"Shark","info_stringID":"SHARK_INFO","clickable":true,"radius":10}
+{"prefab_noExt":"Shark","info_stringID":"SHARK_INFO","clickable":true,"radius":10}
+{"prefab_noExt":"Shark","info_stringID":"SHARK_INFO","clickable":true,"radius":10}
+{"prefab_noExt":"Shark","info_stringID":"SHARK_INFO","clickable":true,"radius":10}
+{"prefab_noExt":"FishSpawner","info_stringID":"","clickable":false,"radius":10}
+{"prefab_noExt":"FishSpawner","info_stringID":"","clickable":false,"radius":10}

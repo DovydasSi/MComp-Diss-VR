@@ -9,6 +9,19 @@ public class LocalizationManager : MonoBehaviour
 
 	static List<string> alreadyLoaded = new List<string>();
 
+	void Awake()
+	{
+		DirectoryInfo dir = new DirectoryInfo("Assets/Resources/Strings");
+
+		FileInfo [] files = dir.GetFiles("*.txt");
+
+		foreach(FileInfo file in files)
+		{
+			ReadFile("Assets/Resources/Strings/" + file.Name);
+		}
+	}
+
+
 	// Start is called before the first frame update
 	public static void ReadFile(string filename)
 	{

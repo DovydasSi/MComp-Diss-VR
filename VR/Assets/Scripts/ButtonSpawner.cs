@@ -36,32 +36,30 @@ public class ButtonSpawner : MonoBehaviour
 
 
 		LoadButtonsFromFile();
-		LocalizationManager.ReadFile("Assets/Strings.txt");
 	}
 
 	private void LoadButtonsFromFile()
 	{
-		string path = "Assets/Scene_Options.json";
+		string path = "Assets/Scene_Options.txt";
 
 		if (!File.Exists(path)) return;
 
 		StreamReader sr = new StreamReader(path, true);
-		
-		string line = sr.ReadLine();
-		if (int.TryParse(line, out int num_of_tests))
+
+		string line;
+
+		for (int i = 0; (line = sr.ReadLine()) != null; i++)
 		{
-			for (int i = 0; i < num_of_tests && (line = sr.ReadLine()) != null; i++)
-			{
-				ButtonInfo info = JsonUtility.FromJson<ButtonInfo>(line);
+			ButtonInfo info = JsonUtility.FromJson<ButtonInfo>(line);
 
-				ButtonContent obj = Instantiate(prefabObject, parentTransform);
+			ButtonContent obj = Instantiate(prefabObject, parentTransform);
 
-				obj.transform.SetSiblingIndex(i); // We want these buttons to take priority in the sequence 
+			obj.transform.SetSiblingIndex(i); // We want these buttons to take priority in the sequence 
 
-				//Load data to button
-				obj.LoadData(info);
-			}
+			//Load data to button
+			obj.LoadData(info);
 		}
+
 		sr.Close();
 	}
 
@@ -100,10 +98,9 @@ public class ButtonSpawner : MonoBehaviour
 
 	public static bool SaveButtonInfo(ButtonInfo[] info)
 	{
-		string path = "Assets/Scene_Options.json";
+		string path = "Assets/Scene_Options.txt";
 
 		StreamWriter sw = new StreamWriter(path, false);
-		sw.WriteLine(1);
 		foreach (ButtonInfo p in info)
 		{
 			sw.WriteLine(JsonUtility.ToJson(p));

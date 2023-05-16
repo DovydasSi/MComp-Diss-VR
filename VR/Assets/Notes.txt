@@ -1,7 +1,7 @@
 
 Features:
 Create underwater scene													Done(Partially)
-Create test scene														.
+Create test scene														Done
 Add scene transitions through UI buttons								Done
 Structure and create files for Button actions (Json?)					Done
 Spawn buttons dynamically based on file count							Done
@@ -15,10 +15,10 @@ Add information about stuff from text files								Done
 	Change oceanSceneSetup file to json to include string ID			Done
 Create quiz minigame													Done
 Create JSON file reader to load quizes									Done
-Different quiz types (text, text + image, maybe spelling)				Done(I think?)
+Different quiz types (text, text + image, maybe spelling)				Done (I think?)
 Audio																	Basic (One Song, static)
 	[Optional] Could be improved with loading song from file			.
-Menuing																	Done(More or less)
+Menuing																	Done (More or less)
 Write the diss															.
 
 

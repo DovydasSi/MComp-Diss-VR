@@ -39,7 +39,7 @@ public class SceneChanger : MonoBehaviour
 		SceneManager.LoadScene(1);
 	}
 
-	public static void ToMainMenu(bool a)
+	public static void ToMainMenu()
 	{
 		SceneManager.LoadScene(0);
 	}
