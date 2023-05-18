@@ -6948,6 +6948,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3698984738050987404, guid: 7013c509324808b4081656634858d255, type: 3}
+      propertyPath: m_MoveSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3698984738050987404, guid: 7013c509324808b4081656634858d255, type: 3}
       propertyPath: m_UseGravity
       value: 0
       objectReference: {fileID: 0}
@@ -8375,7 +8379,7 @@ MonoBehaviour:
       - m_Target: {fileID: 2076915469}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
         m_MethodName: ToMainMenu
-        m_Mode: 6
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
