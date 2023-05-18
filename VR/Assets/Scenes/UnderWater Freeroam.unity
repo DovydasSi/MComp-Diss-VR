@@ -7608,6 +7608,7 @@ GameObject:
   - component: {fileID: 1681803341}
   - component: {fileID: 1681803340}
   - component: {fileID: 1681803343}
+  - component: {fileID: 1681803344}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7756,6 +7757,19 @@ MonoBehaviour:
     m_SingletonActionBindings: []
     m_Flags: 0
   m_HasMigratedActions: 1
+--- !u!135 &1681803344
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681803339}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.3
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1736046845
 GameObject:
   m_ObjectHideFlags: 0

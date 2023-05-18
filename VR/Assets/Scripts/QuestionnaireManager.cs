@@ -39,9 +39,9 @@ public class QuestionnaireManager : MonoBehaviour
 		{
 			ReadJSONTestFile(SceneChanger.s_sceneSetupFilename);
 		}
-		else 
+		else
 		{
-			string filename = "TestQuestions.txt";
+			string filename = "DefaultQuestions.txt";
 			WriteJSONTestFile(filename);
 			ReadJSONTestFile(filename);
 		}
