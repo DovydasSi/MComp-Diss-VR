@@ -151,7 +151,7 @@ public class QuestionnaireManager : MonoBehaviour
 
 	IEnumerator OnAnswer()
 	{
-		yield return new WaitForSeconds(2.0f);
+		yield return new WaitForSeconds(1.0f);
 		RevealNext();
 	}
 
